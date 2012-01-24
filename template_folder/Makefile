@@ -3,7 +3,7 @@ LIBS    =
 DEFS    = -DDEBUG
 CFLAGS	= -c -Wall -DDEBUG -g
 
-PROJ = cc1.5
+PROJ = <proj>
 
 SOURCES	= $(PROJ).cc
 
