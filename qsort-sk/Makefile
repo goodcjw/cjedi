@@ -3,7 +3,7 @@ LIBS    =
 DEFS    = -DDEBUG
 CFLAGS	= -c -Wall -DDEBUG -g
 
-PROJ = <proj>
+PROJ = qsort-sk
 
 SOURCES	= $(PROJ).cc
 

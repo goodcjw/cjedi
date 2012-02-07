@@ -10,6 +10,6 @@ print $output;
 if($output =~ /exist/){
 	die("Project Exists\n");
 }
-`cat template_folder/Makefile | sed "s/\\<proj\\>/$pj_name/g" > $pj_name/Makefile`;
+`cat template_folder/Makefile | sed "s/\<proj\>/$pj_name/g" > $pj_name/Makefile`;
 `cp template_folder/proj.cc $pj_name/$pj_name.cc`;
 `cd $pj_name`;

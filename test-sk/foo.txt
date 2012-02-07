@@ -1,0 +1,6 @@
+Makefile
+a
+foo.txt
+test-sk
+test-sk.cc
+test-sk.o

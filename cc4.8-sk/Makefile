@@ -3,12 +3,12 @@ LIBS    =
 DEFS    = -DDEBUG
 CFLAGS	= -c -Wall -DDEBUG -g
 
-PROJ = <proj>
+PROJ = cc4.8-sk
 
 SOURCES	= $(PROJ).cc
 
 OBJECTS	= $(SOURCES:.cc=.o)
-TARGET	= test 
+TARGET	= $(PROJ)
 
 all: $(SOURCES) $(TARGET)
 

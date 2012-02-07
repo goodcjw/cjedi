@@ -1,0 +1,9 @@
+start is 0, end is 8, height is 4, remain is 2
+start is 0, end is 4, height is 3, remain is 2
+start is 0, end is 2, height is 2, remain is 2
+start is 0, end is 0, height is 1, remain is 0
+start is 2, end is 2, height is 1, remain is 1
+start is 4, end is 4, height is 1, remain is 0
+start is 6, end is 8, height is 2, remain is 0
+start is 6, end is 6, height is 1, remain is 0
+start is 8, end is 8, height is 1, remain is 0
