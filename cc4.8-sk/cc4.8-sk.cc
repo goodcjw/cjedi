@@ -1,12 +1,16 @@
 #include <stdlib.h>
 #include <stdio.h>
+#include <exception>
+#include <iostream>
 
+using namespace std;
 class TNode{
 public:
 	int v;
 	TNode* left;
 	TNode* right;
 	TNode(int a){v = a;left = NULL;right=NULL;}; 
+	~TNode(){if(left!=NULL) delete left; if(right!=NULL) delete right;}
 };
 
 class LNode{
@@ -20,11 +24,9 @@ public:
 
 
 LNode::~LNode(){
-	LNode * ptr = this->prev;
-	while(ptr!=NULL){
-		LNode* tmp = ptr;
-		ptr = ptr->prev;
-		delete tmp;
+	if(this->prev!=NULL){
+		printf("node %d is deleted\n",t_node->v);
+		delete this->prev;
 	}
 }
 
@@ -65,7 +67,7 @@ find_path(TNode* n, LNode* const oldLink, int value){
 	}
 	find_path(n->left,newLink,value);
 	find_path(n->right,newLink,value);
-	delete newLink;
+	//delete newLink;
 };
 
 int main(int argc, char** argv){
