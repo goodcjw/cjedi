@@ -1,0 +1,10 @@
+#include <stdlib.h>
+#include <stdio.h>
+
+
+int main(int argc, char** argv){
+	char* ptr = (char*)malloc(sizeof(char));
+	*ptr = "abc";
+	printf("%s\n",ptr);
+	return 0;
+}

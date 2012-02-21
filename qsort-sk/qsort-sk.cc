@@ -5,6 +5,7 @@
 
 void 
 swap(int* array, int i, int j){
+	if(i==j) return;
 	int tmp = array[i];
 	array[i] = array[j];
 	array[j] = tmp;
@@ -12,36 +13,29 @@ swap(int* array, int i, int j){
 
 int 
 partition(int array[], int start, int end){
-	assert(start<=end);
-	int pivot = array[end];
 	int bigStart = start;
-	for(int i = start; i<=end;i++){
-		if(array[i]<=pivot){
-			if(i>bigStart){
-				swap(array,bigStart,i);
-			}
-			bigStart++;	
+	for(int i = start; i <= end; i++){
+		if(array[i]<=array[end]){
+			swap(array,bigStart, i);
+			bigStart++;
 		}
-	}	
-	assert(bigStart <= end+1);
-	return (bigStart-1);
+	}
+	return bigStart-1;
 }
 
-void
-qsort(int* array, int start, int end){
-	if(end - start <= 1){
-		if(start<end && array[start]>array[end]){
-			swap(array,start,end);
-		}
+void 
+qsort(int array[], int start, int end){
+	if(start >= end){
 		return;
 	}
 	srand(time(NULL));
-	int pivot = start+rand()%(end-start+1);
+	int pivot = start + rand()%(end-start+1);
 	swap(array,pivot,end);
-	int pivotIndex = partition(array,start,end);
-	qsort(array,start, pivotIndex-1);
-	qsort(array,pivotIndex+1,end);
+	pivot = partition(array,start,end);
+	qsort(array,start, pivot-1);
+	qsort(array,pivot+1,end);
 }
+
 
 int main(int argc, char** argv){
 	int a[9] = {9,8,6,7,5,3,4,2,1};
